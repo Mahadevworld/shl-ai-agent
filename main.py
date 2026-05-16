@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import json
 import os
@@ -13,15 +14,416 @@ genai.configure(
 
 model = genai.GenerativeModel("gemini-flash-latest")
 
-app = FastAPI()
+app = FastAPI(
+    title="SHL Smart Recommender AI Agent",
+    description="An AI-powered SHL assessment recommendation API.",
+    version="1.0.0"
+)
 
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def read_root():
-    return {
-        "message": "Welcome to the SHL Smart Recommender AI Agent!",
-        "documentation": "Please visit /docs to test the API endpoints."
-    }
+    return """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHL Smart Recommender</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(220, 38, 38, 0.25), transparent 35%),
+                linear-gradient(135deg, #0f172a, #020617);
+            color: #e5e7eb;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 980px;
+            background: rgba(15, 23, 42, 0.86);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            border-radius: 28px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+            overflow: hidden;
+            backdrop-filter: blur(18px);
+        }
+
+        .header {
+            padding: 28px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #ef4444, #991b1b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.35);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            margin: 4px 0 0;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #fca5a5;
+            text-decoration: none;
+            border: 1px solid rgba(252, 165, 165, 0.35);
+            padding: 9px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 0;
+        }
+
+        .chat {
+            padding: 26px;
+            border-right: 1px solid rgba(148, 163, 184, 0.18);
+        }
+
+        .panel {
+            padding: 26px;
+            background: rgba(2, 6, 23, 0.35);
+        }
+
+        .messages {
+            height: 420px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding-right: 6px;
+        }
+
+        .message {
+            padding: 14px 16px;
+            border-radius: 18px;
+            line-height: 1.45;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        .bot {
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            align-self: flex-start;
+        }
+
+        .user {
+            background: linear-gradient(135deg, #dc2626, #7f1d1d);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .input-row {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            background: #020617;
+            color: #e5e7eb;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 16px;
+            padding: 14px 15px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #f87171;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ef4444, #991b1b);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 0 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(1.08);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .card h2 {
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        .card p, .card li {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin-bottom: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.14);
+            color: #fecaca;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 6px 10px;
+            border-radius: 999px;
+            margin: 4px;
+            font-size: 12px;
+        }
+
+        .recommendation {
+            margin-top: 8px;
+            padding: 10px;
+            border-radius: 14px;
+            background: rgba(2, 6, 23, 0.45);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+        }
+
+        .recommendation a {
+            color: #fca5a5;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .type {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 820px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .chat {
+                border-right: none;
+                border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .messages {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <section class="header">
+            <div class="brand">
+                <div class="logo">SHL</div>
+                <div>
+                    <h1>SHL Smart Recommender</h1>
+                    <p class="subtitle">AI-powered assessment recommendations from a cleaned SHL catalog</p>
+                </div>
+            </div>
+            <div class="links">
+                <a href="/docs">Swagger Docs</a>
+                <a href="/health">Health Check</a>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="chat">
+                <div id="messages" class="messages">
+                    <div class="message bot">
+                        Hi! Tell me the role and skills you want to assess.
+                        Example: "Hiring a Python backend developer with SQL."
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <input id="userInput" placeholder="Type hiring need..." />
+                    <button id="sendButton" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+            <aside class="panel">
+                <div class="card">
+                    <h2>What this agent does</h2>
+                    <p>
+                        It recommends 1–10 SHL assessments using a catalog-grounded AI workflow with fallback ranking for reliability.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Built-in behaviors</h2>
+                    <span class="tag">Clarify vague queries</span>
+                    <span class="tag">Refuse out-of-scope requests</span>
+                    <span class="tag">Strict JSON API</span>
+                    <span class="tag">Fallback recommender</span>
+                </div>
+
+                <div class="card">
+                    <h2>Test examples</h2>
+                    <ul>
+                        <li>Python backend developer with SQL</li>
+                        <li>Leadership assessment for managers</li>
+                        <li>Numerical reasoning test</li>
+                        <li>I need an assessment</li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script>
+        const messages = [];
+        const messagesDiv = document.getElementById("messages");
+        const input = document.getElementById("userInput");
+        const button = document.getElementById("sendButton");
+
+        input.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+
+        function addMessage(text, type) {
+            const div = document.createElement("div");
+            div.className = "message " + type;
+            div.innerHTML = text;
+            messagesDiv.appendChild(div);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function formatResponse(data) {
+            let html = data.reply || "No reply received.";
+
+            if (data.recommendations && data.recommendations.length > 0) {
+                html += "<br><br><strong>Recommendations:</strong>";
+
+                data.recommendations.forEach(item => {
+                    html += `
+                        <div class="recommendation">
+                            <a href="${item.url}" target="_blank">${item.name}</a>
+                            <div class="type">Type: ${item.test_type}</div>
+                        </div>
+                    `;
+                });
+            }
+
+            return html;
+        }
+
+        async function sendMessage() {
+            const text = input.value.trim();
+
+            if (!text) {
+                return;
+            }
+
+            addMessage(text, "user");
+
+            messages.push({
+                role: "user",
+                content: text
+            });
+
+            input.value = "";
+            button.disabled = true;
+            button.textContent = "Thinking...";
+
+            try {
+                const response = await fetch("/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        messages: messages
+                    })
+                });
+
+                const data = await response.json();
+
+                addMessage(formatResponse(data), "bot");
+
+                messages.push({
+                    role: "assistant",
+                    content: data.reply
+                });
+
+            } catch (error) {
+                addMessage("Something went wrong. Please try again.", "bot");
+            }
+
+            button.disabled = false;
+            button.textContent = "Send";
+        }
+    </script>
+</body>
+</html>
+    """
 
 
 SYSTEM_PROMPT = """
