@@ -20,353 +20,691 @@ app = FastAPI(
     version="1.0.0"
 )
 
-
 @app.get("/", response_class=HTMLResponse)
 def read_root():
     return """
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <title>SHL Smart Recommender</title>
+
     <style>
+
+        :root {
+            --bg: #f5f7f4;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #5f6b66;
+            --border: #dfe5dc;
+
+            --primary: #84cc54;
+            --primary-dark: #1e5315;
+
+            --soft-green: #eef8e8;
+
+            --shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        html[data-theme="dark"] {
+            --bg: #101512;
+            --card: #18201b;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --border: #2d3a31;
+
+            --primary: #84cc54;
+            --primary-dark: #1e5315;
+
+            --soft-green: rgba(132, 204, 84, 0.12);
+
+            --shadow: 0 20px 60px rgba(0,0,0,0.35);
+        }
+
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(220, 38, 38, 0.25), transparent 35%),
-                linear-gradient(135deg, #0f172a, #020617);
-            color: #e5e7eb;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
         }
 
-        .app {
-            width: 100%;
-            max-width: 980px;
-            background: rgba(15, 23, 42, 0.86);
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            border-radius: 28px;
-            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
-            overflow: hidden;
-            backdrop-filter: blur(18px);
-        }
+        .topbar {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 36px;
 
-        .header {
-            padding: 28px;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.18);
             display: flex;
             justify-content: space-between;
-            gap: 20px;
             align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .brand {
             display: flex;
-            gap: 14px;
             align-items: center;
+            gap: 14px;
         }
 
         .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #ef4444, #991b1b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-weight: 900;
+            color: #2b2b2b;
+            font-size: 30px;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        html[data-theme="dark"] .logo {
+            color: #f3f4f6;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .brand-text {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nav a,
+        .theme-toggle {
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+
+            padding: 10px 14px;
+
+            border-radius: 999px;
+
+            text-decoration: none;
+            font-size: 14px;
+
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .nav a:hover {
+            border-color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--primary);
+            color: #111827;
+            border-color: var(--primary);
+            font-weight: 700;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 56px 36px 30px;
+
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 34px;
+
+            align-items: center;
+        }
+
+        .hero-card {
+            background: linear-gradient(
+                145deg,
+                var(--primary-dark),
+                #234d1f
+            );
+
             color: white;
-            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.35);
+
+            border-radius: 30px;
+            padding: 42px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .eyebrow {
+            color: #b8f18e;
+            font-weight: 700;
+            margin-bottom: 14px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
         }
 
         h1 {
-            font-size: 24px;
-            margin: 0;
-            letter-spacing: -0.03em;
+            font-size: 50px;
+            line-height: 1.05;
+            margin: 0 0 18px;
+            letter-spacing: -1.5px;
         }
 
-        .subtitle {
-            margin: 4px 0 0;
-            color: #94a3b8;
-            font-size: 14px;
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.88);
+            margin-bottom: 28px;
         }
 
-        .links {
+        .badges {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .links a {
-            color: #fca5a5;
-            text-decoration: none;
-            border: 1px solid rgba(252, 165, 165, 0.35);
-            padding: 9px 12px;
+        .badge {
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            color: white;
+
+            padding: 9px 13px;
+
             border-radius: 999px;
+
             font-size: 13px;
+            font-weight: 600;
+
+            backdrop-filter: blur(4px);
         }
 
-        .content {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 0;
+        .chat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
         }
 
-        .chat {
-            padding: 26px;
-            border-right: 1px solid rgba(148, 163, 184, 0.18);
+        .chat-header {
+            background: var(--primary);
+            color: #111827;
+            padding: 22px;
         }
 
-        .panel {
-            padding: 26px;
-            background: rgba(2, 6, 23, 0.35);
+        .chat-header h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .chat-header p {
+            margin-top: 6px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.72);
         }
 
         .messages {
-            height: 420px;
+            height: 430px;
             overflow-y: auto;
+
+            padding: 20px;
+
             display: flex;
             flex-direction: column;
             gap: 14px;
-            padding-right: 6px;
+
+            background: var(--card);
         }
 
         .message {
+            max-width: 88%;
+
             padding: 14px 16px;
+
             border-radius: 18px;
-            line-height: 1.45;
+
             font-size: 14px;
-            white-space: pre-wrap;
+            line-height: 1.55;
         }
 
         .bot {
-            background: rgba(30, 41, 59, 0.95);
-            border: 1px solid rgba(148, 163, 184, 0.2);
+            background: var(--soft-green);
+
+            border: 1px solid rgba(132, 204, 84, 0.22);
+
             align-self: flex-start;
         }
 
         .user {
-            background: linear-gradient(135deg, #dc2626, #7f1d1d);
+            background: var(--primary-dark);
             color: white;
+
             align-self: flex-end;
         }
 
         .input-row {
-            margin-top: 18px;
+            border-top: 1px solid var(--border);
+
+            padding: 16px;
+
             display: flex;
             gap: 10px;
+
+            background: var(--card);
         }
 
         input {
             flex: 1;
-            background: #020617;
-            color: #e5e7eb;
-            border: 1px solid rgba(148, 163, 184, 0.3);
-            border-radius: 16px;
-            padding: 14px 15px;
+
+            border: 1px solid var(--border);
+
+            background: var(--bg);
+            color: var(--text);
+
+            border-radius: 14px;
+
+            padding: 14px;
+
             outline: none;
+
             font-size: 14px;
         }
 
         input:focus {
-            border-color: #f87171;
+            border-color: var(--primary);
         }
 
-        button {
-            background: linear-gradient(135deg, #ef4444, #991b1b);
-            color: white;
+        button.send {
+            background: var(--primary);
+
+            color: #111827;
+
             border: none;
-            border-radius: 16px;
-            padding: 0 20px;
+
+            padding: 0 22px;
+
+            border-radius: 14px;
+
             font-weight: 700;
+
             cursor: pointer;
         }
 
-        button:hover {
-            filter: brightness(1.08);
-        }
-
-        button:disabled {
+        button.send:disabled {
             opacity: 0.6;
-            cursor: not-allowed;
         }
 
-        .card {
-            background: rgba(15, 23, 42, 0.75);
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            border-radius: 20px;
-            padding: 18px;
-            margin-bottom: 16px;
+        .recommendation {
+            margin-top: 12px;
+
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
         }
 
-        .card h2 {
-            font-size: 16px;
-            margin: 0 0 10px;
+        .recommendation a {
+            color: var(--primary-dark);
+
+            text-decoration: none;
+
+            font-weight: 700;
         }
 
-        .card p, .card li {
-            color: #cbd5e1;
+        .type {
+            margin-top: 5px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .examples {
+            max-width: 1200px;
+
+            margin: 0 auto 56px;
+
+            padding: 0 36px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .example {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            padding: 22px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .example strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .example span {
+            color: var(--muted);
             font-size: 14px;
             line-height: 1.5;
         }
 
-        ul {
-            padding-left: 18px;
-            margin-bottom: 0;
+        .footer {
+            margin-top: 20px;
+
+            padding: 28px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
         }
 
-        .tag {
-            display: inline-block;
-            background: rgba(239, 68, 68, 0.14);
-            color: #fecaca;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            padding: 6px 10px;
-            border-radius: 999px;
-            margin: 4px;
-            font-size: 12px;
-        }
+        @media (max-width: 900px) {
 
-        .recommendation {
-            margin-top: 8px;
-            padding: 10px;
-            border-radius: 14px;
-            background: rgba(2, 6, 23, 0.45);
-            border: 1px solid rgba(148, 163, 184, 0.16);
-        }
-
-        .recommendation a {
-            color: #fca5a5;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .type {
-            color: #94a3b8;
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        @media (max-width: 820px) {
-            .content {
+            .hero {
                 grid-template-columns: 1fr;
             }
 
-            .chat {
-                border-right: none;
-                border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+            h1 {
+                font-size: 38px;
             }
 
-            .header {
+            .examples {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
                 flex-direction: column;
+                gap: 14px;
                 align-items: flex-start;
             }
-
-            .messages {
-                height: 360px;
-            }
         }
+
     </style>
 </head>
+
 <body>
-    <main class="app">
-        <section class="header">
-            <div class="brand">
-                <div class="logo">SHL</div>
-                <div>
-                    <h1>SHL Smart Recommender</h1>
-                    <p class="subtitle">AI-powered assessment recommendations from a cleaned SHL catalog</p>
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="logo">
+                SHL<span>.</span>
+            </div>
+
+            <div>
+
+                <div class="brand-title">
+                    Smart Recommender
                 </div>
+
+                <div class="brand-text">
+                    AI-powered assessment recommendation system
+                </div>
+
             </div>
-            <div class="links">
-                <a href="/docs">Swagger Docs</a>
-                <a href="/health">Health Check</a>
+
+        </div>
+
+        <nav class="nav">
+
+            <a href="/docs">
+                API Docs
+            </a>
+
+            <a href="/health">
+                Health
+            </a>
+
+            <button class="theme-toggle" onclick="toggleTheme()">
+                Dark Mode
+            </button>
+
+        </nav>
+
+    </header>
+
+    <main class="hero">
+
+        <section class="hero-card">
+
+            <div class="eyebrow">
+                SHL-inspired AI recommendation workflow
             </div>
+
+            <h1>
+                Find the right assessment for every hiring decision.
+            </h1>
+
+            <p>
+                This AI-powered recommender uses a cleaned SHL catalog,
+                strict prompt rules, multi-turn conversation support,
+                and fallback ranking logic to recommend reliable assessments.
+            </p>
+
+            <div class="badges">
+
+                <span class="badge">
+                    Clarifies vague queries
+                </span>
+
+                <span class="badge">
+                    Refuses unsafe prompts
+                </span>
+
+                <span class="badge">
+                    Catalog-grounded answers
+                </span>
+
+                <span class="badge">
+                    Fallback recommendation engine
+                </span>
+
+            </div>
+
         </section>
 
-        <section class="content">
-            <div class="chat">
-                <div id="messages" class="messages">
-                    <div class="message bot">
-                        Hi! Tell me the role and skills you want to assess.
-                        Example: "Hiring a Python backend developer with SQL."
-                    </div>
-                </div>
+        <section class="chat-card">
 
-                <div class="input-row">
-                    <input id="userInput" placeholder="Type hiring need..." />
-                    <button id="sendButton" onclick="sendMessage()">Send</button>
-                </div>
+            <div class="chat-header">
+
+                <h2>
+                    Try the recommender
+                </h2>
+
+                <p>
+                    Example: Hiring a Python backend developer with SQL
+                </p>
+
             </div>
 
-            <aside class="panel">
-                <div class="card">
-                    <h2>What this agent does</h2>
-                    <p>
-                        It recommends 1–10 SHL assessments using a catalog-grounded AI workflow with fallback ranking for reliability.
-                    </p>
+            <div id="messages" class="messages">
+
+                <div class="message bot">
+                    Hi! Tell me the role and skills you want to assess.
                 </div>
 
-                <div class="card">
-                    <h2>Built-in behaviors</h2>
-                    <span class="tag">Clarify vague queries</span>
-                    <span class="tag">Refuse out-of-scope requests</span>
-                    <span class="tag">Strict JSON API</span>
-                    <span class="tag">Fallback recommender</span>
-                </div>
+            </div>
 
-                <div class="card">
-                    <h2>Test examples</h2>
-                    <ul>
-                        <li>Python backend developer with SQL</li>
-                        <li>Leadership assessment for managers</li>
-                        <li>Numerical reasoning test</li>
-                        <li>I need an assessment</li>
-                    </ul>
-                </div>
-            </aside>
+            <div class="input-row">
+
+                <input
+                    id="userInput"
+                    placeholder="Type hiring need..."
+                />
+
+                <button
+                    id="sendButton"
+                    class="send"
+                    onclick="sendMessage()"
+                >
+                    Send
+                </button>
+
+            </div>
+
         </section>
+
     </main>
 
+    <section class="examples">
+
+        <div class="example">
+
+            <strong>
+                Technical Hiring
+            </strong>
+
+            <span>
+                Python backend developer with SQL and APIs
+            </span>
+
+        </div>
+
+        <div class="example">
+
+            <strong>
+                Leadership Hiring
+            </strong>
+
+            <span>
+                Leadership assessment for managers and team leads
+            </span>
+
+        </div>
+
+        <div class="example">
+
+            <strong>
+                Ability Testing
+            </strong>
+
+            <span>
+                Numerical reasoning and cognitive ability testing
+            </span>
+
+        </div>
+
+    </section>
+
+    <div class="footer">
+        Built with FastAPI, Gemini AI, catalog-grounded prompting,
+        and fallback ranking logic.
+    </div>
+
     <script>
+
         const messages = [];
-        const messagesDiv = document.getElementById("messages");
-        const input = document.getElementById("userInput");
-        const button = document.getElementById("sendButton");
+
+        const messagesDiv =
+            document.getElementById("messages");
+
+        const input =
+            document.getElementById("userInput");
+
+        const button =
+            document.getElementById("sendButton");
+
+        const toggleButton =
+            document.querySelector(".theme-toggle");
 
         input.addEventListener("keydown", function(event) {
+
             if (event.key === "Enter") {
                 sendMessage();
             }
+
         });
 
+        function toggleTheme() {
+
+            const html =
+                document.documentElement;
+
+            const current =
+                html.getAttribute("data-theme");
+
+            if (current === "dark") {
+
+                html.setAttribute("data-theme", "light");
+
+                toggleButton.textContent =
+                    "Dark Mode";
+
+            } else {
+
+                html.setAttribute("data-theme", "dark");
+
+                toggleButton.textContent =
+                    "Light Mode";
+            }
+        }
+
         function addMessage(text, type) {
-            const div = document.createElement("div");
-            div.className = "message " + type;
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "message " + type;
+
             div.innerHTML = text;
+
             messagesDiv.appendChild(div);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            messagesDiv.scrollTop =
+                messagesDiv.scrollHeight;
         }
 
         function formatResponse(data) {
-            let html = data.reply || "No reply received.";
 
-            if (data.recommendations && data.recommendations.length > 0) {
-                html += "<br><br><strong>Recommendations:</strong>";
+            let html =
+                data.reply || "No reply received.";
+
+            if (
+                data.recommendations &&
+                data.recommendations.length > 0
+            ) {
+
+                html +=
+                    "<br><br><strong>Recommendations:</strong>";
 
                 data.recommendations.forEach(item => {
+
                     html += `
                         <div class="recommendation">
-                            <a href="${item.url}" target="_blank">${item.name}</a>
-                            <div class="type">Type: ${item.test_type}</div>
+
+                            <a href="${item.url}" target="_blank">
+                                ${item.name}
+                            </a>
+
+                            <div class="type">
+                                Type: ${item.test_type}
+                            </div>
+
                         </div>
                     `;
                 });
@@ -376,7 +714,9 @@ def read_root():
         }
 
         async function sendMessage() {
-            const text = input.value.trim();
+
+            const text =
+                input.value.trim();
 
             if (!text) {
                 return;
@@ -390,23 +730,35 @@ def read_root():
             });
 
             input.value = "";
+
             button.disabled = true;
-            button.textContent = "Thinking...";
+
+            button.textContent =
+                "Thinking...";
 
             try {
+
                 const response = await fetch("/chat", {
+
                     method: "POST",
+
                     headers: {
                         "Content-Type": "application/json"
                     },
+
                     body: JSON.stringify({
                         messages: messages
                     })
+
                 });
 
-                const data = await response.json();
+                const data =
+                    await response.json();
 
-                addMessage(formatResponse(data), "bot");
+                addMessage(
+                    formatResponse(data),
+                    "bot"
+                );
 
                 messages.push({
                     role: "assistant",
@@ -414,17 +766,24 @@ def read_root():
                 });
 
             } catch (error) {
-                addMessage("Something went wrong. Please try again.", "bot");
+
+                addMessage(
+                    "Something went wrong. Please try again.",
+                    "bot"
+                );
             }
 
             button.disabled = false;
-            button.textContent = "Send";
+
+            button.textContent =
+                "Send";
         }
+
     </script>
+
 </body>
 </html>
     """
-
 
 SYSTEM_PROMPT = """
 You are an SHL Assessment Recommender Agent.
