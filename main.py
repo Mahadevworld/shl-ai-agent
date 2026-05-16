@@ -26,6 +26,12 @@ model = genai.GenerativeModel(
 # =========================
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {
+        "message": "Welcome to the SHL Smart Recommender AI Agent!", 
+        "documentation": "Please visit /docs to test the API endpoints."
+    }
 # =========================
 # SYSTEM PROMPT
 # =========================
