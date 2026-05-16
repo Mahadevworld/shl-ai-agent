@@ -6,7 +6,7 @@ The system recommends SHL assessments based on hiring needs while following stri
 
 ---
 
-## Features
+# Features
 
 - FastAPI backend
 - Gemini-powered recommendation engine
@@ -21,9 +21,9 @@ The system recommends SHL assessments based on hiring needs while following stri
 
 ---
 
-## Live Demo
+# Live Demo
 
-URL:
+## Render Deployment
 
 ```bash
 https://shl-smart-recommender-iv6m.onrender.com
