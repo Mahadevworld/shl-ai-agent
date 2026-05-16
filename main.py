@@ -261,7 +261,10 @@ Return valid JSON only in this format:
 """
 
     try:
-        response = model.generate_content(final_prompt)
+        response = model.generate_content(
+            final_prompt,
+            request_options={"timeout": 10}
+        )
 
         ai_text = response.text.strip()
         ai_text = ai_text.replace("```json", "")
@@ -284,7 +287,8 @@ def ai_test():
 
     try:
         response = model.generate_content(
-            "Say hello in one short sentence."
+            "Say hello in one short sentence.",
+            request_options={"timeout": 10}
         )
 
         return {
