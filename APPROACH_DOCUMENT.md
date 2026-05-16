@@ -3,7 +3,7 @@
 **Candidate:** Mahaprasad Acharjee  
 **Role:** AI Intern  
 **Live API:** https://shl-smart-recommender-iv6m.onrender.com 
-**GitHub:** [PASTE_GITHUB_REPO_LINK_HERE]
+**GitHub:** https://github.com/Mahadevworld/shl-ai-agent
 
 ---
 
