@@ -24,10 +24,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/branch-manager-short-form/"
     },
     {
-        "name": "Global Skills Development Report",
-        "url": "https://www.shl.com/products/product-catalog/view/global-skills-development-report/"
-    },
-    {
         "name": ".NET Framework 4.5",
         "url": "https://www.shl.com/products/product-catalog/view/net-framework-4-5/"
     },
@@ -128,24 +124,12 @@
         "url": "https://www.shl.com/products/product-catalog/view/aerospace-engineering-new/"
     },
     {
-        "name": "Agile Software Development",
-        "url": "https://www.shl.com/products/product-catalog/view/agile-software-development/"
-    },
-    {
         "name": "Agile Testing (New)",
         "url": "https://www.shl.com/products/product-catalog/view/agile-testing-new/"
     },
     {
         "name": "AI Skills",
         "url": "https://www.shl.com/products/product-catalog/view/ai-skills/"
-    },
-    {
-        "name": "Amazon Web Services (AWS) Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/amazon-web-services-aws-development-new/"
-    },
-    {
-        "name": "Android Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/android-development-new/"
     },
     {
         "name": "Angular 6 (New)",
@@ -232,10 +216,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/asp-net-4-5/"
     },
     {
-        "name": "Assessment and Development Center Exercises",
-        "url": "https://www.shl.com/products/product-catalog/view/assessment-and-development-center-exercises/"
-    },
-    {
         "name": "Automata - Fix (New)",
         "url": "https://www.shl.com/products/product-catalog/view/automata-fix-new/"
     },
@@ -270,10 +250,6 @@
     {
         "name": "Automata Selenium",
         "url": "https://www.shl.com/products/product-catalog/view/automata-selenium/"
-    },
-    {
-        "name": "Automation Anywhere RPA Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/automation-anywhere-rpa-development-new/"
     },
     {
         "name": "Automotive Engineering (New)",
@@ -432,14 +408,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/manager-7-1-solution/"
     },
     {
-        "name": "Manager 8.0 JFA",
-        "url": "https://www.shl.com/products/product-catalog/view/manager-8-0-jfa/"
-    },
-    {
-        "name": "Manager 8.0+ JFA",
-        "url": "https://www.shl.com/products/product-catalog/view/manager-8-0-jfa-4310/"
-    },
-    {
         "name": "Manufacturing Production Team Member",
         "url": "https://www.shl.com/products/product-catalog/view/manufacturing-production-team-member/"
     },
@@ -488,14 +456,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/digital-advertising-new/"
     },
     {
-        "name": "Digital Readiness Development Report - IC",
-        "url": "https://www.shl.com/products/product-catalog/view/digital-readiness-development-report/"
-    },
-    {
-        "name": "Digital Readiness Development Report - Manager",
-        "url": "https://www.shl.com/products/product-catalog/view/digital-readiness-development-report-manager/"
-    },
-    {
         "name": "Personal Banker - Short Form",
         "url": "https://www.shl.com/products/product-catalog/view/personal-banker-short-form/"
     },
@@ -516,10 +476,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/professional-7-1-solution-4247/"
     },
     {
-        "name": "Professional 8.0 JFA",
-        "url": "https://www.shl.com/products/product-catalog/view/professional-8-0-jfa/"
-    },
-    {
         "name": "Professional/Individual Contributor - Short Form",
         "url": "https://www.shl.com/products/product-catalog/view/professionalindividual-contributor-short-form/"
     },
@@ -538,10 +494,6 @@
     {
         "name": "Drupal (New)",
         "url": "https://www.shl.com/products/product-catalog/view/drupal-new/"
-    },
-    {
-        "name": "DSI v1.1 Interpretation Report",
-        "url": "https://www.shl.com/products/product-catalog/view/dsi-v1-1-interpretation-report/"
     },
     {
         "name": "Econometrics (New)",
@@ -588,14 +540,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/enterprise-java-beans-new/"
     },
     {
-        "name": "Enterprise Leadership Report 1.0",
-        "url": "https://www.shl.com/products/product-catalog/view/enterprise-leadership-report/"
-    },
-    {
-        "name": "Enterprise Leadership Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/enterprise-leadership-report-2-0/"
-    },
-    {
         "name": "Entry Level Customer Serv-Retail & Contact Center",
         "url": "https://www.shl.com/products/product-catalog/view/entry-level-customer-serv-retail-and-contact-center/"
     },
@@ -608,16 +552,8 @@
         "url": "https://www.shl.com/products/product-catalog/view/executive-scenarios/"
     },
     {
-        "name": "Executive Scenarios Narrative Report",
-        "url": "https://www.shl.com/products/product-catalog/view/executive-scenarios-narrative-report/"
-    },
-    {
         "name": "Store Manager 7.1 (Americas)",
         "url": "https://www.shl.com/products/product-catalog/view/store-manager-7-1-%28americas%29/"
-    },
-    {
-        "name": "Executive Scenarios Profile Report",
-        "url": "https://www.shl.com/products/product-catalog/view/executive-scenarios-profile-report/"
     },
     {
         "name": "ExpressJS (New)",
@@ -712,14 +648,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/graduate-scenarios/"
     },
     {
-        "name": "Graduate Scenarios Narrative Report",
-        "url": "https://www.shl.com/products/product-catalog/view/graduate-scenarios-narrative-report/"
-    },
-    {
-        "name": "Graduate Scenarios Profile Report",
-        "url": "https://www.shl.com/products/product-catalog/view/graduate-scenarios-profile-report/"
-    },
-    {
         "name": "Hibernate (New)",
         "url": "https://www.shl.com/products/product-catalog/view/hibernate-new/"
     },
@@ -746,18 +674,6 @@
     {
         "name": "Workplace Safety - Team 7.1 (International)",
         "url": "https://www.shl.com/products/product-catalog/view/workplace-safety-team-7-1-solution/"
-    },
-    {
-        "name": "HiPo Assessment Report 1.0",
-        "url": "https://www.shl.com/products/product-catalog/view/hipo-assessment-report-1-0/"
-    },
-    {
-        "name": "HiPo Assessment Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/hipo-assessment-report-2-0/"
-    },
-    {
-        "name": "HiPo Unlocking Potential Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/hipo-unlocking-potential-report-2-0/"
     },
     {
         "name": "Housekeeping (New)",
@@ -802,14 +718,6 @@
     {
         "name": "Interpersonal Communications",
         "url": "https://www.shl.com/products/product-catalog/view/interpersonal-communications/"
-    },
-    {
-        "name": "Interviewing and Hiring Concepts (U.S.)",
-        "url": "https://www.shl.com/products/product-catalog/view/interviewing-and-hiring-concepts-u-s/"
-    },
-    {
-        "name": "iOS Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/ios-development-new/"
     },
     {
         "name": "ITIL (IT Infrastructure Library) (New)",
@@ -880,18 +788,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/management-scenarios/"
     },
     {
-        "name": "Managerial Scenarios Candidate Report",
-        "url": "https://www.shl.com/products/product-catalog/view/managerial-scenarios-candidate-report/"
-    },
-    {
-        "name": "Managerial Scenarios Narrative Report",
-        "url": "https://www.shl.com/products/product-catalog/view/managerial-scenarios-narrative-report/"
-    },
-    {
-        "name": "Managerial Scenarios Profile Report",
-        "url": "https://www.shl.com/products/product-catalog/view/managerial-scenarios-profile-report/"
-    },
-    {
         "name": "Manual Testing (New)",
         "url": "https://www.shl.com/products/product-catalog/view/manual-testing-new/"
     },
@@ -940,32 +836,12 @@
         "url": "https://www.shl.com/products/product-catalog/view/metallurgical-engineering-new/"
     },
     {
-        "name": "MFS 360 Enterprise Leadership Report",
-        "url": "https://www.shl.com/products/product-catalog/view/mfs-360-enterprise-leadership-report/"
-    },
-    {
-        "name": "MFS 360 UCF Group Report",
-        "url": "https://www.shl.com/products/product-catalog/view/mfs-360-ucf-group-report/"
-    },
-    {
-        "name": "MFS 360 UCF Performance Potential Dev Tips Report",
-        "url": "https://www.shl.com/products/product-catalog/view/mfs-360-ucf-performance-potential-dev-tips-report/"
-    },
-    {
-        "name": "MFS 360 UCF Standard Report",
-        "url": "https://www.shl.com/products/product-catalog/view/mfs-360-ucf-standard-report/"
-    },
-    {
         "name": "Micro Focus Unified Functional Testing (New)",
         "url": "https://www.shl.com/products/product-catalog/view/micro-focus-unified-functional-testing-new/"
     },
     {
         "name": "Microservices (New)",
         "url": "https://www.shl.com/products/product-catalog/view/microservices-new/"
-    },
-    {
-        "name": "Microsoft Dynamics Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/microsoft-dynamics-development-new/"
     },
     {
         "name": "Microsoft Excel 365 - Essentials (New)",
@@ -1024,22 +900,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/motivation-questionnaire-mqm5/"
     },
     {
-        "name": "MQ Candidate Motivation Report",
-        "url": "https://www.shl.com/products/product-catalog/view/mq-candidate-motivation-report/"
-    },
-    {
-        "name": "MQ Employee Motivation Report",
-        "url": "https://www.shl.com/products/product-catalog/view/mq-employee-motivation-report/"
-    },
-    {
-        "name": "MQ Motivation Report Pack",
-        "url": "https://www.shl.com/products/product-catalog/view/mq-motivation-report-pack/"
-    },
-    {
-        "name": "MQ Profile",
-        "url": "https://www.shl.com/products/product-catalog/view/mq-profile/"
-    },
-    {
         "name": "MS Access (New)",
         "url": "https://www.shl.com/products/product-catalog/view/ms-access-new/"
     },
@@ -1064,10 +924,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/ms-word-new/"
     },
     {
-        "name": "MuleSoft Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/mulesoft-development-new/"
-    },
-    {
         "name": "Multitasking Ability",
         "url": "https://www.shl.com/products/product-catalog/view/multitasking-ability/"
     },
@@ -1090,94 +946,6 @@
     {
         "name": "Operations Management (New)",
         "url": "https://www.shl.com/products/product-catalog/view/operations-management-new/"
-    },
-    {
-        "name": "OPQ Candidate Plus Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-candidate-plus-report/"
-    },
-    {
-        "name": "OPQ Candidate Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-candidate-report-2-0/"
-    },
-    {
-        "name": "OPQ Emotional Intelligence Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-emotional-intelligence-report/"
-    },
-    {
-        "name": "OPQ Leadership Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-leadership-report/"
-    },
-    {
-        "name": "OPQ Manager Plus Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-manager-plus-report/"
-    },
-    {
-        "name": "OPQ Manager Plus Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-manager-plus-report-2-0/"
-    },
-    {
-        "name": "OPQ Maximising your Learning Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-maximising-your-learning-report/"
-    },
-    {
-        "name": "OPQ MQ Sales Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-mq-sales-report/"
-    },
-    {
-        "name": "OPQ Premium Plus Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-premium-plus-report/"
-    },
-    {
-        "name": "OPQ Premium Plus Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-premium-plus-report-2-0/"
-    },
-    {
-        "name": "OPQ Profile Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-profile-report/"
-    },
-    {
-        "name": "OPQ Team Impact Group Development Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-team-impact-group-development-report/"
-    },
-    {
-        "name": "OPQ Team Impact Individual Development Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-team-impact-individual-development-report/"
-    },
-    {
-        "name": "OPQ Team Impact Selection Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-team-impact-selection-report/"
-    },
-    {
-        "name": "OPQ Team Types & Leadership Styles Profile",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-team-types-and-leadership-styles-profile/"
-    },
-    {
-        "name": "OPQ Team Types and Leadership Styles Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-team-types-and-leadership-styles-report/"
-    },
-    {
-        "name": "OPQ UCF Development Action Planner Report 1.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-ucf-development-action-planner-report/"
-    },
-    {
-        "name": "OPQ UCF Development Action Planner Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-ucf-development-action-planner-report-2-0/"
-    },
-    {
-        "name": "OPQ Universal Competency Report 1.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-universal-competency-report/"
-    },
-    {
-        "name": "OPQ Universal Competency Report 2.0",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-universal-competency-report-2-0/"
-    },
-    {
-        "name": "OPQ User and Managers Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-user-and-managers-report/"
-    },
-    {
-        "name": "OPQ User Report",
-        "url": "https://www.shl.com/products/product-catalog/view/opq-user-report/"
     },
     {
         "name": "Oracle DBA (Advanced Level) (New)",
@@ -1206,10 +974,6 @@
     {
         "name": "Pediatrics (New)",
         "url": "https://www.shl.com/products/product-catalog/view/pediatrics-new/"
-    },
-    {
-        "name": "Pega Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/pega-development-new/"
     },
     {
         "name": "Perl (New)",
@@ -1246,14 +1010,6 @@
     {
         "name": "PHP (New)",
         "url": "https://www.shl.com/products/product-catalog/view/php-new/"
-    },
-    {
-        "name": "PJM Development Report",
-        "url": "https://www.shl.com/products/product-catalog/view/pjm-development-report/"
-    },
-    {
-        "name": "PJM Selection Report",
-        "url": "https://www.shl.com/products/product-catalog/view/pjm-selection-report/"
     },
     {
         "name": "Polymer Engineering (New)",
@@ -1320,14 +1076,6 @@
         "url": "https://www.shl.com/products/product-catalog/view/remoteworkq/"
     },
     {
-        "name": "RemoteWorkQ Manager Report",
-        "url": "https://www.shl.com/products/product-catalog/view/remoteworkq-manager-report/"
-    },
-    {
-        "name": "RemoteWorkQ Participant Report",
-        "url": "https://www.shl.com/products/product-catalog/view/remoteworkq-participant-report/"
-    },
-    {
         "name": "RESTful Web Services (New)",
         "url": "https://www.shl.com/products/product-catalog/view/restful-web-services-new/"
     },
@@ -1352,32 +1100,12 @@
         "url": "https://www.shl.com/products/product-catalog/view/sales-and-service-phone-simulation/"
     },
     {
-        "name": "Sales Interview Guide",
-        "url": "https://www.shl.com/products/product-catalog/view/sales-interview-guide/"
-    },
-    {
-        "name": "Sales Profiler Cards",
-        "url": "https://www.shl.com/products/product-catalog/view/sales-profiler-cards/"
-    },
-    {
         "name": "Sales Transformation 1.0 - Individual Contributor",
         "url": "https://www.shl.com/products/product-catalog/view/sales-transformation-report-individual-contributor/"
     },
     {
         "name": "Sales Transformation 2.0 - Individual Contributor",
         "url": "https://www.shl.com/products/product-catalog/view/salestransformationreport2-0-individualcontributor/"
-    },
-    {
-        "name": "Sales Transformation Report 1.0 - Sales Manager",
-        "url": "https://www.shl.com/products/product-catalog/view/sales-transformation-report-sales-manager/"
-    },
-    {
-        "name": "Sales Transformation Report 2.0 - Sales Manager",
-        "url": "https://www.shl.com/products/product-catalog/view/sales-transformation-report-2-0-sales-manager/"
-    },
-    {
-        "name": "Salesforce Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/salesforce-development-new/"
     },
     {
         "name": "SAP ABAP (Advanced Level) (New)",
@@ -1432,11 +1160,11 @@
         "url": "https://www.shl.com/products/product-catalog/view/shl-verify-interactive-inductive-reasoning/"
     },
     {
-        "name": "SHL Verify Interactive \u2013 Deductive Reasoning",
+        "name": "SHL Verify Interactive – Deductive Reasoning",
         "url": "https://www.shl.com/products/product-catalog/view/shl-verify-interactive-deductive-reasoning/"
     },
     {
-        "name": "SHL Verify Interactive \u2013 Numerical Reasoning",
+        "name": "SHL Verify Interactive – Numerical Reasoning",
         "url": "https://www.shl.com/products/product-catalog/view/shl-verify-interactive-numerical-reasoning/"
     },
     {
@@ -1446,22 +1174,6 @@
     {
         "name": "SHL Verify Interactive Numerical Calculation",
         "url": "https://www.shl.com/products/product-catalog/view/shl-verify-interactive-numerical-calculation/"
-    },
-    {
-        "name": "Siebel Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/siebel-development-new/"
-    },
-    {
-        "name": "Smart Interview Live",
-        "url": "https://www.shl.com/products/product-catalog/view/smart-interview-live/"
-    },
-    {
-        "name": "Smart Interview Live Coding",
-        "url": "https://www.shl.com/products/product-catalog/view/smart-interview-live-coding/"
-    },
-    {
-        "name": "Smart Interview On Demand",
-        "url": "https://www.shl.com/products/product-catalog/view/smart-interview-on-demand/"
     },
     {
         "name": "Social Media (New)",
@@ -1502,10 +1214,6 @@
     {
         "name": "SQL Server Integration Services (SSIS) (New)",
         "url": "https://www.shl.com/products/product-catalog/view/sql-server-integration-services-ssis-new/"
-    },
-    {
-        "name": "SQL Server Reporting Services (SSRS) (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/sql-server-reporting-services-ssrs-new/"
     },
     {
         "name": "Statistical Analysis System (New)",
@@ -1560,36 +1268,12 @@
         "url": "https://www.shl.com/products/product-catalog/view/telecommunications-engineering-new/"
     },
     {
-        "name": "Teradata Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/teradata-development-new/"
-    },
-    {
         "name": "Time Management (U.S.)",
         "url": "https://www.shl.com/products/product-catalog/view/time-management-u-s/"
     },
     {
-        "name": "Training Development",
-        "url": "https://www.shl.com/products/product-catalog/view/training-development/"
-    },
-    {
         "name": "Typing (New)",
         "url": "https://www.shl.com/products/product-catalog/view/typing-new/"
-    },
-    {
-        "name": "UiPath RPA Development (New)",
-        "url": "https://www.shl.com/products/product-catalog/view/uipath-rpa-development-new/"
-    },
-    {
-        "name": "Universal Competency Framework Interview Guide",
-        "url": "https://www.shl.com/products/product-catalog/view/universal-competency-framework-interview-guide/"
-    },
-    {
-        "name": "Universal Competency Framework Job profiling guide",
-        "url": "https://www.shl.com/products/product-catalog/view/universal-competency-framework-job-profiling-guide/"
-    },
-    {
-        "name": "Universal Competency Framework Profiler Cards (44)",
-        "url": "https://www.shl.com/products/product-catalog/view/universal-competency-framework-profiler-cards-44/"
     },
     {
         "name": "UNIX (New)",
@@ -1634,25 +1318,5 @@
     {
         "name": "Verify - Working with Information",
         "url": "https://www.shl.com/products/product-catalog/view/verify-working-with-information/"
-    },
-    {
-        "name": "Verify G+ - Ability Test Report",
-        "url": "https://www.shl.com/products/product-catalog/view/verify-g-ability-test-report/"
-    },
-    {
-        "name": "Verify G+ - Candidate Report",
-        "url": "https://www.shl.com/products/product-catalog/view/verify-g-candidate-report/"
-    },
-    {
-        "name": "Verify Interactive Ability Report",
-        "url": "https://www.shl.com/products/product-catalog/view/verify-interactive-ability-report/"
-    },
-    {
-        "name": "Verify Interactive G+ Candidate Report",
-        "url": "https://www.shl.com/products/product-catalog/view/verify-interactive-g-candidate-report/"
-    },
-    {
-        "name": "Verify Interactive G+ Report",
-        "url": "https://www.shl.com/products/product-catalog/view/verify-interactive-g-report/"
     }
 ]
